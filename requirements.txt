@@ -1,0 +1,6 @@
+# Python packages (install with: pip install -r requirements.txt)
+requests>=2.31.0
+
+# Not installed by pip, but required:
+# - Python 3.10+ with Tkinter (on Ubuntu/Debian: sudo apt install python3-tk)
+# - Ollama (https://ollama.com) with the Gemma 4 model pulled: ollama pull gemma4:e2b
