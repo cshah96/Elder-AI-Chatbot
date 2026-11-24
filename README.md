@@ -12,6 +12,8 @@ This README lists what is done so far.
 
 ### Step 1: Basic local chatbot (`chatbot.py`)
 
+The assistant is called **Pip** for now.
+
 - A desktop chat window (built with Tkinter) with a **black background and white text**.
 - Type a question, press **Enter** or click **Send**, and the reply shows up as it is written.
 - Uses **Gemma 4 (`gemma4:e2b`)** running **locally** through [Ollama](https://ollama.com).

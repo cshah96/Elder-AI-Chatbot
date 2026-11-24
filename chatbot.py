@@ -24,7 +24,7 @@ OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 MODEL_NAME = os.environ.get("ELDER_AI_MODEL", "gemma4:e2b")
 
 SYSTEM_PROMPT = (
-    "You are a kind, patient and friendly assistant for older adults. "
+    "Your name is Pip. You are a kind, patient and friendly assistant for older adults. "
     "Use simple, clear language and short sentences. Avoid jargon. "
     "Be warm and encouraging. If a question is about health, medicine or "
     "an emergency, give helpful general information and gently remind the "
@@ -86,7 +86,7 @@ class ChatWindow:
         self.events = queue.Queue()  # messages from the worker thread to the UI
         self.busy = False
 
-        root.title(f"Elder AI Assistant ({chat.model})")
+        root.title(f"Pip - Elder AI Assistant ({chat.model})")
         root.geometry("800x600")
         root.configure(bg=BG_COLOR)
 
@@ -136,7 +136,7 @@ class ChatWindow:
         self.send_button.pack(side=tk.LEFT, padx=(0, 5))
         tk.Button(input_frame, text="Clear", command=self.clear, **button_style).pack(side=tk.LEFT)
 
-        self.append("Assistant", "Hello! How can I help you today?\n")
+        self.append("Pip", "Hello! I am Pip. How can I help you today?\n")
         self.root.after(50, self.process_events)
 
     # --- UI helpers -------------------------------------------------------
@@ -159,7 +159,7 @@ class ChatWindow:
             return
         self.entry.delete(0, tk.END)
         self.append("You", text + "\n\n")
-        self.append("Assistant", "")
+        self.append("Pip", "")
         self.set_busy(True)
         threading.Thread(target=self.worker, args=(text,), daemon=True).start()
 
@@ -170,7 +170,7 @@ class ChatWindow:
         self.history.configure(state=tk.NORMAL)
         self.history.delete("1.0", tk.END)
         self.history.configure(state=tk.DISABLED)
-        self.append("Assistant", "Let's start fresh. How can I help you?\n")
+        self.append("Pip", "Let's start fresh. How can I help you?\n")
 
     def worker(self, text: str):
         """Runs in a background thread so the window never freezes."""
