@@ -26,6 +26,17 @@ The assistant is called **Pip** for now.
 - The window stays responsive while the model is thinking, because the model runs
   in a background thread.
 
+### Step 2: Pip's animated face
+
+- A round, white, friendly face for Pip at the top of the window, drawn with a Tkinter
+  canvas (no image files or extra packages needed).
+- Pip **blinks** every few seconds (sometimes a quick double blink), **floats** gently
+  up and down, has rosy cheeks, and wears a **warm smile** when idle.
+- While Pip is replying, its **mouth moves** as if talking, then goes back to smiling.
+- The chat area under the face shows only the **current exchange** (your question and
+  Pip's reply). **Scroll up** to see earlier messages.
+- The text box and Send/Clear buttons are at the bottom for replying to Pip.
+
 ---
 
 ## Requirements
@@ -74,7 +85,7 @@ Example: `ELDER_AI_MODEL=gemma4:e4b python chatbot.py`
 
 ```
 Elder-AI-Chatbot/
-├── chatbot.py        # Chat window + connection to the local Gemma 4 model
+├── chatbot.py        # Chat window, Pip's animated face, and the local Gemma 4 connection
 ├── requirements.txt  # Python dependencies
 └── README.md         # This file
 ```
